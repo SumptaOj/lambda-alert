@@ -3,8 +3,8 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as apigw from 'aws-cdk-lib/aws-apigateway';
 import { Construct } from 'constructs';
 import { HitCounter } from './hitcounter';
-import { LambdaTimeoutAlertConstruct } from './lambda-alert'
 import { TableViewer } from 'cdk-dynamo-table-viewer';
+import {LambdaTimeoutAlertConstruct} from "./lambda-alert";
 
 export class CdkWorkshopTsStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {

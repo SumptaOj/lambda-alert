@@ -1,4 +1,3 @@
-import * as cdk from '@aws-cdk/core';
 import * as cloudwatch from 'aws-cdk-lib/aws-cloudwatch';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as snsSubscriptions from 'aws-cdk-lib/aws-sns-subscriptions';
@@ -6,7 +5,6 @@ import * as lambda from 'aws-cdk-lib/aws-lambda'
 import * as actions from "aws-cdk-lib/aws-cloudwatch-actions";
 import * as lambdaSDK from 'aws-sdk';
 import { Construct } from 'constructs';
-import { Stack, StackProps } from 'aws-cdk-lib';
 
 export class LambdaTimeoutAlertConstruct extends Construct {
   constructor(scope: Construct, id: string) {
