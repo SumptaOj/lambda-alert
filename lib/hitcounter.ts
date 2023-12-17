@@ -2,6 +2,7 @@ import * as cdk from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import {Construct} from 'constructs';
+import {IFunction} from "aws-cdk-lib/aws-lambda/lib/function-base";
 
 export interface HitCounterProps {
     /** the function for which we want to count url hits **/
@@ -11,7 +12,7 @@ export interface HitCounterProps {
 export class HitCounter extends Construct {
 
     /** allows accessing the counter function */
-    public readonly handler: lambda.Function;
+    public readonly handler: IFunction;
 
     /** the hit counter table */
     public readonly table: dynamodb.Table;
@@ -26,8 +27,9 @@ export class HitCounter extends Construct {
         this.table = table;
 
         this.handler = new lambda.Function(this, 'HitCounterHandler', {
-            runtime: lambda.Runtime.NODEJS_LATEST,
+            runtime: lambda.Runtime.NODEJS_16_X,
             handler: 'hitcounter.handler',
+            functionName: "HitCounterHandlers",
             code: lambda.Code.fromAsset('lambda'),
             environment: {
                 DOWNSTREAM_FUNCTION_NAME: props.downstream.functionName,

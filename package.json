@@ -23,7 +23,7 @@
     "@aws-cdk/aws-cloudwatch-actions": "^1.204.0",
     "@aws-cdk/aws-lambda": "^1.204.0",
     "@aws-cdk/aws-sns": "^1.204.0",
-    "aws-cdk-lib": "^2.97.0",
+    "aws-cdk-lib": "^2.115.0",
     "aws-sdk": "^2.1520.0",
     "cdk-dynamo-table-viewer": "^0.2.46",
     "constructs": "^10.0.0"
